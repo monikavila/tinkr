@@ -55,7 +55,7 @@ shove_nodes_in <- function(body, new, nodes, where = "after", space = TRUE) {
     xpath <- NULL
   }
   if (length(nodes) == 0) {
-    msg <- glue::glue("No nodes matched the expression {sQuote(xpath)}")
+    msg <-  cli_text("No nodes matched the expression {sQuote(xpath)}")
     rlang::abort(msg, class = "insert-md-xpath")
   }
   if (!inherits(nodes, c("xml_node", "xml_nodeset"))) {
